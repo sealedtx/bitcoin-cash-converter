@@ -1,4 +1,4 @@
-/*-
+package com.github.kiulian.converter;/*-
  * -----------------------LICENSE_START-----------------------
  * Bitcoincash address converter
  * %%
@@ -20,7 +20,6 @@
 
 
 
-import com.github.kiulian.converter.AddressConverter;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
