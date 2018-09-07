@@ -42,4 +42,35 @@ System.out.println(bitcoincash_address); // output: 18uzj5qpkmg88uF3R4jKTQRVV3Ni
 Include
 -------
 
-Deploying on maven coming soon...
+### Maven
+
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+```
+```xml
+<dependency>
+  <groupId>com.github.sealedtx</groupId>
+  <artifactId>bitcoin-cash-converter</artifactId>
+  <version>1.0</version>
+</dependency>
+```
+
+### Gradle
+
+```gradle
+allprojects {
+  repositories {
+  ...
+  maven { url 'https://jitpack.io' }
+  }
+}
+  
+dependencies {
+  implementation 'com.github.sealedtx:bitcoin-cash-converter:1.0'
+}
+```
