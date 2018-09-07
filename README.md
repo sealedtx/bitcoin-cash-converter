@@ -1,7 +1,8 @@
 bitcoin-cash-converter
 ============
 
-[![Build Status](https://travis-ci.org/sealedtx/bitcoin-cash-converter.svg?branch=master)](https://travis-ci.org/sealedtx/bitcoin-cash-converter)
+[![Build Status](https://travis-ci.org/sealedtx/bitcoin-cash-converter.svg?branch=master)](https://travis-ci.org/sealedtx/bitcoin-cash-converter) [![](https://jitpack.io/v/sealedtx/bitcoin-cash-converter.svg)](https://jitpack.io/#sealedtx/bitcoin-cash-converter)
+
 
 Simple address converter from legacy to [new bitcoincash format](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md) and vice versa. It is fully covered by unit tests.
 
