@@ -1,7 +1,7 @@
 bitcoin-cash-converter
 ============
 
-Simple address converter from legacy to [new bitcoincash format](https://github.com/bitcoincashorg/spec/blob/master/cashaddr.md) and vice versa. It is fully covered by unit tests.
+Simple address converter from legacy to [new bitcoincash format](https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md) and vice versa. It is fully covered by unit tests.
 
 Usage
 -----
