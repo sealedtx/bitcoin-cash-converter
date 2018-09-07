@@ -1,10 +1,31 @@
-package converter.b58;
+package com.github.kiulian.converter.b58;
+
+/*-
+ * -----------------------LICENSE_START-----------------------
+ * Bitcoincash address converter
+ * %%
+ * Copyright (C) 2018 Igor Kiulian
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * -----------------------LICENSE_END-----------------------
+ */
+
+
+
 
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.util.Arrays;
-import java.util.HashMap;
-
 
 public class B58 {
     public static class Decoded {
@@ -90,9 +111,6 @@ public class B58 {
         }
     }
 
-    /**
-     * Encodes the given bytes in base58. No checksum is appended.
-     */
     public static byte[] encodeToBytes(byte[] input) {
         if (input.length == 0) {
             return new byte[0];
@@ -180,12 +198,6 @@ public class B58 {
 
     }
 
-    /**
-     * Uses the checksum in the last 4 bytes of the decoded data to verify the rest are correct. The checksum is
-     * removed from the returned data.
-     *
-     * @throws EncodingFormatException if the input is not baseFields 58 or the checksum does not validate.
-     */
     public static byte[] decodeChecked(String input, int version) throws EncodingFormatException {
         byte[] buffer = decodeAndCheck(input);
 
