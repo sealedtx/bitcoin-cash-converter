@@ -30,7 +30,9 @@ public class AddressConverter {
     private static final BigInteger POLYMOD_CONSTANT = new BigInteger("07ffffffff", 16);
 
     public static String toCashAddress(String legacyAddress) {
-        byte[] payloadBytes = B58.decodeChecked(legacyAddress, 0);
+        int oldVersion = B58.decode(legacyAddress)[0];
+        int newVersion = getVersion(true, oldVersion);
+        byte[] payloadBytes = B58.decodeChecked(legacyAddress, oldVersion);
 
         int[] payload = new int[payloadBytes.length];
         for (int i = 0; i < payloadBytes.length; i++) {
@@ -38,7 +40,7 @@ public class AddressConverter {
             if (payload[i] < 0)
                 payload[i] += 256;
         }
-        payload = concatArrays(new int[]{0}, payload);
+        payload = concatArrays(new int[]{newVersion}, payload);
 
         payload = convertBits(payload, 8, 5);
         int[] checksum = checksum(payload);
@@ -54,10 +56,19 @@ public class AddressConverter {
         int[] converted = convertBits(decoded, 5, 8);
         int[] payload = Arrays.copyOfRange(converted, 1, converted.length - 6);
         byte[] payloadBytes = new byte[payload.length];
-        for (int i = 0; i < payloadBytes.length; payloadBytes[i] = (byte) payload[i++]) {
-        }
+        for (int i = 0; i < payloadBytes.length; payloadBytes[i] = (byte) payload[i++]);
 
-        return B58.encodeToStringChecked(payloadBytes, converted[0]);
+        return B58.encodeToStringChecked(payloadBytes, getVersion(false, converted[0]));
+    }
+
+    private static int getVersion(boolean legacy, int version) {
+        if (legacy) {
+            if (version == 5) // P2SH
+                return 8;
+        } else
+        if (version == 8)
+            return 5; // P2SH
+        return 0; //P2PKH
     }
 
     private static int[] checksum(int[] payload) {
