@@ -36,7 +36,7 @@ System.out.println(bitcoincash_address); // output: bitcoincash:qptvav58e40tcrcw
 
 String cash_address = "bitcoincash:qptvav58e40tcrcwuvufr94u7enkjk6s2qlxy5uf9j";
 String legacy_address = AddressConverter.toLegacyAddress(legacy_address);
-System.out.println(bitcoincash_address); // output: 18uzj5qpkmg88uF3R4jKTQRVV3NiQ5SBPf
+System.out.println(legacy_address); // output: 18uzj5qpkmg88uF3R4jKTQRVV3NiQ5SBPf
 ```
 
 Include
