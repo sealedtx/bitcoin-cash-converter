@@ -1,4 +1,6 @@
-package com.github.kiulian.converter;/*-
+package com.github.kiulian.converter;
+
+/*-
  * -----------------------LICENSE_START-----------------------
  * Bitcoincash address converter
  * %%
