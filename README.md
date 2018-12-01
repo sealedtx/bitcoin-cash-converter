@@ -24,7 +24,7 @@ String bitcoincash_address = AddressConverter.toCashAddress(legacy_address);
 You can convert bitcoincash address from a `String` with format "bitcoincash:${your_address}" to legacy fomat:
 
 ```java
-String legacy_address = AddressConverter.toCashAddress(legacy_address);
+String legacy_address = AddressConverter.toLegacyAddress(bitcoincash_address);
 ```
 
 ### Example:
